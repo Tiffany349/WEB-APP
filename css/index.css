@@ -1,0 +1,110 @@
+/* Reset general: elimina márgenes y paddings por defecto, y ajusta el modelo de caja */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo y estilo base del body */
+body {
+  background-color: black;    /* Fondo negro */
+  color: white;               /* Texto blanco */
+  font-family: sans-serif;    /* Fuente sin serifas */
+  width: 100%;                /* Ocupar todo el ancho disponible */
+  overflow-x: hidden;         /* Evitar scroll horizontal */
+}
+
+/* Estilo del logo dentro del header */
+header img {
+  width: 150px;     /* Ancho fijo de 150px */
+  height: auto;     /* Altura proporcional (automática) */
+  display: block;   /* Evita espacios debajo de la imagen */
+  margin: 20px;     /* Margen alrededor del logo */
+}
+
+/* Estilo general del video dentro de una sección */
+section video {
+  width: 100%;         /* Que ocupe todo el ancho del contenedor */
+  max-width: 95vw;     /* Pero que no pase del 95% del ancho de la ventana */
+  margin: 20px auto;   /* Margen vertical y centrado horizontalmente */
+  padding: 0 10px;     /* Espacio a los lados */
+}
+
+/* Estilo extra para el video (puede combinarse con el anterior) */
+video {
+  width: 100%;            /* Ocupar todo el ancho posible */
+  height: 300px;          /* Altura fija */
+  object-fit: cover;      /* Recorta el video para cubrir el área sin deformarse */
+  display: block;         /* Elimina espacios alrededor */
+  border-radius: 10px;    /* Bordes redondeados */
+}
+
+/* Contenedor de las imágenes de flores */
+#flores {
+  display: flex;            /* Diseño flexible en fila */
+  gap: 70px;                /* Separación entre las imágenes */
+  justify-content: center; /* Centra horizontalmente las imágenes */
+  flex-wrap: wrap;          /* Permite que las imágenes bajen si no caben */
+  margin: 20px auto;        /* Margen superior/inferior y centrado horizontal */
+  padding: 0 20px;          /* Espacio horizontal interno */
+}
+
+/* Estilo de las imágenes de flores */
+#flores img {
+  width: 200px;             /* Ancho fijo */
+  height: 170px;            /* Altura fija */
+  object-fit: cover;        /* Recorta la imagen para que encaje sin deformarse */
+  border-radius: 10px;      /* Bordes redondeados */
+}
+
+/* Media query para laptops grandes (resoluciones entre 1441px y 1920px) */
+@media (min-width: 1441px) and (max-width: 1920px) {
+  video {
+    height: 400px;          /* Video más alto en pantallas grandes */
+  }
+
+  #flores img {
+    width: 220px;           /* Imágenes más grandes */
+    height: 190px;
+  }
+
+  header img {
+    width: 180px;           /* Logo más grande */
+  }
+}
+
+/* Media query para teléfonos (máximo 460px de ancho) */
+@media (max-width: 460px) {
+  video {
+    height: 180px;          /* Video más bajo en móviles */
+  }
+
+  #flores {
+    gap: 20px;              /* Menor espacio entre imágenes */
+  }
+
+  #flores img {
+    width: 100px;           /* Imágenes más pequeñas */
+    height: 90px;
+  }
+
+  header img {
+    width: 100px;           /* Logo más pequeño */
+  }
+}
+
+/* Media query para tablets pequeñas o pantallas medianas (hasta 768px) */
+@media (max-width: 768px) {
+  video {
+    height: 220px;          /* Altura moderada para tablets */
+  }
+
+  #flores img {
+    width: 140px;           /* Tamaño medio para imágenes */
+    height: 120px;
+  }
+
+  header img {
+    width: 120px;           /* Logo de tamaño medio */
+  }
+}
